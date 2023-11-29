@@ -1,0 +1,26 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: kafka:9092
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            use.type.headers: false
+            value.default.type: org.example.challenge.dto.AppInfo
+            deserializer:
+              add.type.info.headers: false
+#      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+#      properties:
+#          spring:
+#            json:
+#              default:
+#                type: "org.example.challenge.dto.AppInfo"
+##              trusted:
+##                packages: "org.example.challenge.dto"
+#            deserializer:
+#              value:
+#                delegate:
+#                  class: org.springframework.kafka.support.serializer.JsonDeserializer

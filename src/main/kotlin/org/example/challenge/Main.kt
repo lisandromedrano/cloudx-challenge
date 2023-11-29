@@ -1,7 +1,15 @@
 package org.example.challenge
 
-fun main() {
-    println("Hello World!")
+import org.slf4j.LoggerFactory
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
-    println(System.getenv())
+@SpringBootApplication
+class Application
+private val logger = LoggerFactory.getLogger(Application::class.java)
+fun main() {
+    logger.info("Starting Challenge Application")
+
+    runApplication<Application>()
+
 }

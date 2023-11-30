@@ -9,18 +9,15 @@ spring:
         spring:
           json:
             use.type.headers: false
-            value.default.type: org.example.challenge.dto.AppInfo
+            value.default.type: org.example.challenge.dto.AppInfoMessage
             deserializer:
               add.type.info.headers: false
-#      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-#      properties:
-#          spring:
-#            json:
-#              default:
-#                type: "org.example.challenge.dto.AppInfo"
-##              trusted:
-##                packages: "org.example.challenge.dto"
-#            deserializer:
-#              value:
-#                delegate:
-#                  class: org.springframework.kafka.support.serializer.JsonDeserializer
+  datasource:
+    url: jdbc:postgresql://postgres:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: C7SQKr@g6SwtXNi
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect

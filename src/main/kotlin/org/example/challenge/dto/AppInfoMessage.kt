@@ -5,7 +5,7 @@ data class Metadata(
     val namespace: String?
 
 )
-data class AppInfo(
+data class AppInfoMessage(
     val apiVersion: String?,
     val kind: String?,
     val metadata: Metadata?
